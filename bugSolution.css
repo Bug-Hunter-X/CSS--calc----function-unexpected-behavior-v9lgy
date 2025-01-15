@@ -1,0 +1,18 @@
+To fix the issues, use parentheses to clarify the order of operations and ensure unit consistency:
+
+```css
+/* Correctly handles operator precedence */
+.element { width: calc((50% + 50px) - 10%); }
+
+/* Correctly handles unit consistency */
+.element { width: calc(100px + 50vw); }
+/*Or you might use a variable for better readability*/
+:root {
+  --element-width: 100px;
+}
+.element {
+  width: calc(var(--element-width) + 50vw);
+}
+```
+
+This makes the calculations more explicit and reduces the risk of unexpected results.  The use of variables can improve the readability of complex `calc()` expressions.
